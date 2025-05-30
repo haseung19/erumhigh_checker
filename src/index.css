@@ -205,25 +205,18 @@
   }
 }
 
-html,
-body {
+html, body, #root {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  height: 100%
 }
 
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  height: 100%;
+body {
+  font-family: 'Paperlogy', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  background: var(--background);
 }
 
 @layer base {

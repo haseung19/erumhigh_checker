@@ -38,7 +38,7 @@ export function ThemeToggle({ onThemeChange }: { onThemeChange?: () => void }) {
       p-2 rounded
       ${theme === "light"
             ? "bg-primary text-[#fafafa] dark:text-[#242424] pointer-events-none cursor-default transition-none"
-            : "transition-colors duration-500 hover:bg-[#cacaca] dark:hover:bg-[#444444]"}
+            : "transition-colors duration-0 hover:bg-[#cacaca] dark:hover:bg-[#444444]"}
     `}
         onClick={() => handleSetTheme("light")}
         tabIndex={theme === "light" ? -1 : 0}
@@ -50,7 +50,7 @@ export function ThemeToggle({ onThemeChange }: { onThemeChange?: () => void }) {
       p-2 rounded
       ${theme === "dark"
             ? "bg-primary text-[#fafafa] dark:text-[#242424] pointer-events-none cursor-default transition-none"
-            : "transition-colors duration-500 hover:bg-[#cacaca] dark:hover:bg-[#444444]"}
+            : "transition-colors duration-0 hover:bg-[#cacaca] dark:hover:bg-[#444444]"}
     `}
         onClick={() => handleSetTheme("dark")}
         tabIndex={theme === "dark" ? -1 : 0}
@@ -62,7 +62,7 @@ export function ThemeToggle({ onThemeChange }: { onThemeChange?: () => void }) {
       p-2 rounded
       ${theme === "system"
             ? "bg-primary text-[#fafafa] dark:text-[#242424] pointer-events-none cursor-default transition-none"
-            : "transition-colors duration-500 hover:bg-[#cacaca] dark:hover:bg-[#444444]"}
+            : "transition-colors duration-0 hover:bg-[#cacaca] dark:hover:bg-[#444444]"}
     `}
         onClick={() => handleSetTheme("system")}
         tabIndex={theme === "system" ? -1 : 0}

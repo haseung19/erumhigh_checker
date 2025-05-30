@@ -114,7 +114,6 @@ export default function HomePage({ onLogout }: DashboardProps) {
             )}
           />
         </span>
-
       </Button>
 
       {/* Sidebar */}
@@ -213,12 +212,12 @@ export default function HomePage({ onLogout }: DashboardProps) {
       )}
 
       {/* Main content */}
-      <main className="relative z-10 p-8 min-h-screen min-w-screen">
-        <div className="flex gap-4 px-4 justify-center items-center mb-4 -my-4 ">
+      <main className="relative z-10 min-h-screen min-w-screen flex flex-col sm:px-8 md:px-24 lg:px-48 xl:px-64 max-w-5xl mx-auto">
+        <div className="h-[10vh] sm:h-[8vh] flex items-center justify-center px-4">
           <LogoIcon className="w-8 h-8" />
-          <span className="text-3xl font-extralight">ERUM HIGH</span>
+          <span className="text-3xl font-extralight ml-2">ERUM HIGH</span>
         </div>
-        <div className="overflow-y-auto max-h-[calc(100vh-96px)]">
+        <div className="h-[90vh] overflow-y-auto px-4 pb-4 scrollbar-none">
           {section === "dashboard" && <DashboardContent />}
           {section === "attendance" && <AttendanceContent />}
           {section === "user" && <UserContent />}

@@ -1,28 +1,33 @@
+// pages/LoginPage.tsx
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { LogoIcon } from "@/components/icons/LogoIcon";
+import { LogoIcon } from '@/components/icons/LogoIcon';
 
 interface LoginPageProps {
   onLogin: () => void;
 }
 
-function LoginPage({ onLogin }: LoginPageProps) {
+export default function LoginPage({ onLogin }: LoginPageProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const isEnabled = email.trim() !== '' && password.trim() !== '';
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onLogin();
+    if (isEnabled) {
+      onLogin();
+    }
   };
 
   return (
-    <div className="w-full max-w-sm my-auto bg-background min-h-screen min-w-screen flex items-center justify-center">
-      <Card className="w-90">
+    <div className="w-full max-w-sm mx-auto bg-background min-h-screen flex items-center justify-center">
+      <Card className="w-full">
         <CardHeader className="space-y-1">
-          <LogoIcon className="w-16 h-16 object-contain mx-auto"/>
+          <LogoIcon className="w-16 h-16 mx-auto" />
           <CardTitle className="text-2xl text-center">ERUM HIGH</CardTitle>
           <CardDescription className="text-center">
             이룸교회 고등부 출석체크 웹 서비스입니다.
@@ -52,20 +57,20 @@ function LoginPage({ onLogin }: LoginPageProps) {
                 required
               />
             </div>
-            <Button type="submit" className="w-full">
+            <Button
+              type="submit"
+              disabled={!isEnabled}
+              className={`w-full transition-colors ${
+                isEnabled
+                  ? 'bg-white text-black hover:bg-gray-100'
+                  : 'bg-[#353639] text-gray-300 cursor-not-allowed'
+              }`}
+            >
               로그인
             </Button>
           </form>
         </CardContent>
-        {/* <CardFooter className="flex justify-center text-sm text-muted-foreground">
-           <p>
-             아직 회원이 아니신가요?{" "}
-             <a href="#" className="text-primary hover:underline">회원가입</a>
-           </p>
-        </CardFooter> */}
       </Card>
     </div>
   );
 }
-
-export default LoginPage;
