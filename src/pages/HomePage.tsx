@@ -62,7 +62,6 @@ export default function HomePage({ onLogout }: DashboardProps) {
         aria-label="Toggle Sidebar"
       >
         {/* 애니메이션 아이콘 */}
-
         <span className="block relative w-6 h-5.5">
           {/* Top line */}
           <span
@@ -70,7 +69,7 @@ export default function HomePage({ onLogout }: DashboardProps) {
               "absolute left-0 w-full h-0.5 origin-center rounded-full",
               "bg-[#242424] dark:bg-[#fafafa]",
               themeChanging
-                ? "transition-all duration-500 delay-0"
+                ? (sidebarOpen ? "transition-all duration-500 delay-0 top-2.5" : "transition-all duration-500 delay-0 top-0.5")
                 : sidebarOpen
                   ? "transition-all duration-300 top-2.5"
                   : "transition-all duration-300 top-0.5 delay-300",
@@ -83,7 +82,7 @@ export default function HomePage({ onLogout }: DashboardProps) {
               "absolute left-0 w-full h-0.5 origin-center top-2.5 rounded-full",
               "bg-[#242424] dark:bg-[#fafafa]",
               themeChanging
-                ? "transition-all duration-500 delay-0"
+                ? "transition-all duration-500 delay-0 rotate-0"
                 : sidebarOpen
                   ? "transition-all duration-300 delay-300 rotate-45"
                   : "transition-all duration-300 delay-0 rotate-0",
@@ -95,7 +94,7 @@ export default function HomePage({ onLogout }: DashboardProps) {
               "absolute left-0 w-full h-0.5 origin-center top-2.5 rounded-full",
               "bg-[#242424] dark:bg-[#fafafa]",
               themeChanging
-                ? "transition-all duration-500 delay-0"
+                ? "transition-all duration-500 delay-0 rotate-0"
                 : sidebarOpen
                   ? "transition-all duration-300 delay-300 -rotate-45"
                   : "transition-all duration-300 delay-0 rotate-0",
@@ -107,15 +106,15 @@ export default function HomePage({ onLogout }: DashboardProps) {
               "absolute left-0 w-full h-0.5 origin-center rounded-full",
               "bg-[#242424] dark:bg-[#fafafa]",
               themeChanging
-                ? "transition-all duration-500 delay-0"
+                ? (sidebarOpen ? "transition-all duration-500 delay-0 top-2.5" : "transition-all duration-500 delay-0 top-4.5")
                 : sidebarOpen
                   ? "transition-all duration-300 top-2.5"
                   : "transition-all duration-300 top-4.5 delay-300",
-              // sidebarOpen ? "top-2.5" : "top-4.5",
               !sidebarOpen && hideLines ? "opacity-100" : "opacity-0"
             )}
           />
         </span>
+
       </Button>
 
       {/* Sidebar */}
