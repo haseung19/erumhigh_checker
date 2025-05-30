@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- 라이트 모드일 때 -->
+  <link rel="icon" href="/favicon-dark.svg" media="(prefers-color-scheme: light)" type="image/svg+xml" />
+
+  <!-- 다크 모드일 때 -->
+  <link rel="icon" href="/favicon-light.svg" media="(prefers-color-scheme: dark)" type="image/svg+xml" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erum High</title>
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (
+      savedTheme === 'dark' ||
+      (!savedTheme || savedTheme === 'system') && systemDark
+    ) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
