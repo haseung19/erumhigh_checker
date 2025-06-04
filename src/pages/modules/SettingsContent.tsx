@@ -1,3 +1,4 @@
+// /pages/SettingsContent.tsx
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function SettingsContent({ onThemeChange }: { onThemeChange: () => void }) {

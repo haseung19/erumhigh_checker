@@ -29,7 +29,7 @@ const ratioData = [
   { name: "기타", value: 6.3 },
 ];
 
-const COLORS = ["#f97316", "#10b981", "#6366f1", "#F73463", "#6b7280"];
+const COLORS = ["#f97316", "#fffb00", "#6366f1", "#F73463", "#6b7280"];
 
 export default function DashboardContent() {
   return (
@@ -49,6 +49,7 @@ export default function DashboardContent() {
             ].map(({ label, value, valueClass }, idx) => (
               <Card
                 key={idx}
+                // 353639
                 className="h-full bg-white dark:bg-[#353639] rounded-lg shadow p-2"
               >
                 <CardContent className="h-full flex flex-col justify-center items-center text-gray-900 dark:text-gray-100">
