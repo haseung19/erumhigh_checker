@@ -2,8 +2,8 @@
 
 export default function UserContent() {
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-2">인원관리</h2>
+    <div className="px-4 py-2">
+      <h2 className="font-semibold text-2xl mb-4">인원관리</h2>
       <p className="text-muted-foreground">인원관리 기능을 여기에 구현하세요.</p>
     </div>
   );
